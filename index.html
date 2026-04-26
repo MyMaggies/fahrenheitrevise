@@ -3,144 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahrenheit 451: Revision Portal</title>
+    <title>Fahrenheit 451: Comprehensive Revision</title>
     <style>
-        :root {
-            --primary: #e63946;
-            --secondary: #457b9d;
-            --bg: #f8f9fa;
-            --text: #1d3557;
-            --correct: #2a9d8f;
-        }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        :root { --primary: #e63946; --secondary: #457b9d; --bg: #f8f9fa; --text: #1d3557; --correct: #2a9d8f; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; line-height: 1.5; }
+        .container { max-width: 850px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: var(--primary); text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-bottom: 25px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 8px; margin-bottom: 25px; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .section { display: none; }
         .section.active { display: block; animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
-        .btn { background: var(--secondary); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        .btn { background: var(--secondary); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 20px; display: block; width: fit-content; }
         .option-btn { display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; transition: 0.2s; }
         .option-btn:hover { border-color: var(--secondary); background: #f0f7ff; }
         .correct { background-color: var(--correct) !important; color: white; }
         .wrong { background-color: var(--primary) !important; color: white; }
-
         .drag-container { border: 2px dashed #ccc; padding: 15px; min-height: 60px; margin: 15px 0; border-radius: 8px; background: #fafafa; }
-        .draggable { background: var(--secondary); color: white; padding: 12px; margin: 8px; border-radius: 6px; cursor: grab; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        
+        .draggable { background: var(--secondary); color: white; padding: 10px; margin: 5px; border-radius: 6px; cursor: grab; font-size: 14px; }
         .feedback { font-weight: bold; margin-top: 15px; height: 20px; }
-        .scaffold-select { padding: 6px; border-radius: 4px; border: 1px solid var(--secondary); font-weight: bold; color: var(--secondary); }
-        
-        #progress-bar { width: 100%; background: #eee; height: 8px; border-radius: 4px; margin-bottom: 25px; }
-        #progress-fill { width: 20%; background: var(--correct); height: 100%; border-radius: 4px; transition: 0.4s; }
+        .scaffold-select { padding: 4px; border-radius: 4px; border: 1px solid var(--secondary); font-weight: bold; color: var(--secondary); }
+        #progress-bar { width: 100%; background: #eee; height: 10px; border-radius: 5px; margin-bottom: 25px; }
+        #progress-fill { width: 0%; background: var(--correct); height: 100%; border-radius: 5px; transition: 0.4s; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Fahrenheit 451: Part 1 Revision</h1>
+    <h1>Fahrenheit 451: Master Revision</h1>
     
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/I8L-Q6N4DN0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/I8L-Q6N4DN0" allowfullscreen></iframe>
     </div>
 
     <div id="progress-bar"><div id="progress-fill"></div></div>
 
     <div class="section active" id="q1">
-        <h3>1. What is the significance of the title Fahrenheit 451?</h3>
-        <button class="option-btn" onclick="checkMC(this, false, 'q1')">It is the maximum temperature of most ovens.</button>
-        <button class="option-btn" onclick="checkMC(this, false, 'q1')">It is the temperature at which iron melts.</button>
-        <button class="option-btn" onclick="checkMC(this, true, 'q1')">It is the temperature at which paper ignites and burns.</button>
+        <h3>1. Who is Guy Montag and what is his job?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q1')">He is a librarian who curates museum files.</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q1')">He is a fireman who finds and burns books.</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q1')">He is a doctor who treats patients with machines.</button>
         <div class="feedback"></div>
     </div>
 
     <div class="section" id="q2">
-        <h3>2. What smelled like perfume to Montag?</h3>
-        <button class="option-btn" onclick="checkMC(this, false, 'q2')">The ink on the books</button>
-        <button class="option-btn" onclick="checkMC(this, true, 'q2')">The kerosene</button>
-        <button class="option-btn" onclick="checkMC(this, false, 'q2')">Clarisse's garden</button>
+        <h3>2. What is the significance of the title Fahrenheit 451?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q2')">It is the temperature at which paper ignites and burns.</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q2')">It is the maximum temperature of a standard oven.</button>
         <div class="feedback"></div>
     </div>
 
     <div class="section" id="q3">
-        <h3>3. Sequence the PEEL Paragraph: The Impact of Clarisse</h3>
-        <p>Drag these sentences into the <b>drop zone</b> in the correct order: Point, Evidence, Explanation, Link.</p>
-        <div id="drag-zone" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="drag-link" class="draggable" draggable="true" ondragstart="drag(event)" data-order="4"><b>Link:</b> This marks the beginning of Montag's internal transformation and rebellion.</div>
-            <div id="drag-point" class="draggable" draggable="true" ondragstart="drag(event)" data-order="1"><b>Point:</b> Montag is deeply unsettled by Clarisse’s question, “Are you happy?”</div>
-            <div id="drag-exp" class="draggable" draggable="true" ondragstart="drag(event)" data-order="3"><b>Explanation:</b> This is the first time Montag is forced to reflect on his own life satisfaction.</div>
-            <div id="drag-evid" class="draggable" draggable="true" ondragstart="drag(event)" data-order="2"><b>Evidence:</b> After she asks, Montag is left confused and repeating the question to himself.</div>
-        </div>
-        <p><b>Drop Zone:</b></p>
-        <div id="drop-zone" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <button class="btn" onclick="checkDrag('q3')">Verify Sequence</button>
+        <h3>3. True or False?</h3>
+        <p>Clarisse's last name is McClellan.</p>
+        <button class="option-btn" onclick="checkMC(this, true, 'q3')">True</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q3')">False</button>
         <div class="feedback"></div>
     </div>
 
     <div class="section" id="q4">
-        <h3>4. True or False?</h3>
-        <p>Clarisse thinks the TV characters she sees are her "family."</p>
-        <button class="option-btn" onclick="checkMC(this, false, 'q4')">True (It was actually Mildred who thought this)</button>
-        <button class="option-btn" onclick="checkMC(this, true, 'q4')">False (Mildred calls the TV characters her family)</button>
+        <h3>4. What did Montag believe had been done to the Mechanical Hound?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q4')">It was programmed to do tricks for the firemen.</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q4')">It had been programmed to act against him.</button>
         <div class="feedback"></div>
     </div>
 
     <div class="section" id="q5">
-        <h3>5. Analysis Scaffold: Symbols</h3>
-        <p>Select the correct terms to complete the summary:</p>
-        <div>
-            Montag's profession is represented by the 
-            <select class="scaffold-select" id="s1">
-                <option value="">--select--</option>
-                <option value="wrong">Snake</option>
-                <option value="correct">Salamander</option>
-            </select> 
-            on his arm. At home, his wife uses 
-            <select class="scaffold-select" id="s2">
-                <option value="">--select--</option>
-                <option value="correct">Seashells</option>
-                <option value="wrong">Whistlers</option>
-            </select> 
-            to block out reality. However, after watching an old woman 
-            <select class="scaffold-select" id="s3">
-                <option value="">--select--</option>
-                <option value="wrong">go to jail</option>
-                <option value="correct">die with her books</option>
-            </select>, 
-            Montag begins to question his role in society.
+        <h3>5. What are the earplug radios in the novel called?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q5')">Air pods</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q5')">Seashells</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q5')">Whistlers</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q6">
+        <h3>6. Which two professional symbols does Montag wear?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q6')">Salamander and Snake</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q6')">Salamander and Phoenix</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q7">
+        <h3>7. What does Clarisse ask Montag at the end of their first meeting?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q7')">"Do you love your wife?"</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q7')">"Are you happy?"</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q8">
+        <h3>8. What happens to the old woman whose house is burned?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q8')">She refuses to leave and dies in the fire.</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q8')">She is taken to a mental institution.</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q9">
+        <h3>9. How does Mildred claim Clarisse was killed?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q9')">By a car</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q9')">By the Mechanical Hound</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q10">
+        <h3>10. Which quote reflects Montag's feelings about being a fireman at the start?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q10')">"It was a pleasure to burn."</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q10')">"He tossed and turned, upset about Mildred."</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q11">
+        <h3>11. Who thinks the TV characters are real people/family?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q11')">Clarisse</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q11')">Mildred</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q12">
+        <h3>12. Why did technicians (not doctors) treat Mildred's overdose?</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q12')">Doctors only treated men.</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q12')">The procedure was so common that machines were developed for it.</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q13">
+        <h3>13. What does Clarisse say happened to her friends?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q13')">They have all been shot or killed in car wrecks.</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q13')">They all went off to college.</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q14">
+        <h3>14. Sequence the PEEL Paragraph: Montag's Awakening</h3>
+        <div id="drop-zone-1" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="drag-zone-1" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="d1-4" class="draggable" draggable="true" ondragstart="drag(event)" data-order="4"><b>Link:</b> This marks the beginning of Montag’s internal transformation.</div>
+            <div id="d1-1" class="draggable" draggable="true" ondragstart="drag(event)" data-order="1"><b>Point:</b> Montag is deeply unsettled by Clarisse’s question, “Are you happy?”</div>
+            <div id="d1-3" class="draggable" draggable="true" ondragstart="drag(event)" data-order="3"><b>Explanation:</b> This is the first time he is forced to reflect on his own life satisfaction.</div>
+            <div id="d1-2" class="draggable" draggable="true" ondragstart="drag(event)" data-order="2"><b>Evidence:</b> After she asks, he is left confused, repeating the question to himself.</div>
         </div>
-        <button class="btn" onclick="checkScaffold('q5')">Final Check</button>
+        <button class="btn" onclick="checkDrag('q14', 'drop-zone-1')">Check Order</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q15">
+        <h3>15. Complete the Analysis: The Hearth & The Salamander</h3>
+        <p>The 
+            <select class="scaffold-select" id="sel1">
+                <option value="w">salamander</option>
+                <option value="c">hearth</option>
+            </select> 
+            is a traditional symbol of the home. The 
+            <select class="scaffold-select" id="sel2">
+                <option value="c">salamander</option>
+                <option value="w">phoenix</option>
+            </select> 
+            is one of the official symbols of the firemen. Clarisse's family is unusual because they stay up 
+            <select class="scaffold-select" id="sel3">
+                <option value="c">talking and laughing</option>
+                <option value="w">watching TV</option>
+            </select> 
+            while other houses are kept in darkness.
+        </p>
+        <button class="btn" onclick="checkScaffold('q15', ['sel1','sel2','sel3'])">Submit</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q16">
+        <h3>16. How does Bradbury foreshadow Montag's transformation?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q16')">Through his early discomfort and curiosity about the old woman.</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q16')">By showing him enjoying the smell of kerosene.</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q17">
+        <h3>17. How does the Mechanical Hound contribute to the mood of fear?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q17')">It is a programmed watchdog used to avenge and punish citizens.</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q17')">It represents the rescue animals firemen once used.</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q18">
+        <h3>18. Sequence the PEEL Paragraph: The Old Woman's Sacrifice</h3>
+        <div id="drop-zone-2" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="drag-zone-2" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="d2-4" class="draggable" draggable="true" ondragstart="drag(event)" data-order="4"><b>Link:</b> This sacrifice serves as the catalyst for Montag’s awakening.</div>
+            <div id="d2-1" class="draggable" draggable="true" ondragstart="drag(event)" data-order="1"><b>Point:</b> Montag is deeply moved by the woman’s defiance.</div>
+            <div id="d2-3" class="draggable" draggable="true" ondragstart="drag(event)" data-order="3"><b>Explanation:</b> Her willingness to die for books makes him question their value.</div>
+            <div id="d2-2" class="draggable" draggable="true" ondragstart="drag(event)" data-order="2"><b>Evidence:</b> He watches her die and later steals a book from her house.</div>
+        </div>
+        <button class="btn" onclick="checkDrag('q18', 'drop-zone-2')">Check Order</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q19">
+        <h3>19. Complete the Fact: The Mechanical Hound</h3>
+        <p>The Hound is a robot dog made of 
+            <select class="scaffold-select" id="sel4">
+                <option value="w">flesh and bone</option>
+                <option value="c">copper wire and electricity</option>
+            </select>. 
+            It is used to 
+            <select class="scaffold-select" id="sel5">
+                <option value="c">control people</option>
+                <option value="w">rescue people</option>
+            </select> 
+            who defy the government and is described as being 
+            <select class="scaffold-select" id="sel6">
+                <option value="w">fully alive</option>
+                <option value="c">half dead and half alive</option>
+            </select>.
+        </p>
+        <button class="btn" onclick="checkScaffold('q19', ['sel4','sel5','sel6'])">Submit</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q20">
+        <h3>20. What smelled like perfume to Montag at the start?</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q20')">Kerosene</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q20')">Mildred's hair</button>
         <div class="feedback"></div>
     </div>
 
     <div class="section" id="finish">
-        <h3>🎉 Revision Complete!</h3>
-        <p>You have successfully reviewed Part 1 of Fahrenheit 451. Good luck on your quiz!</p>
-        <button class="btn" onclick="location.reload()">Restart</button>
+        <h3>Quiz Mastered!</h3>
+        <p>You've reviewed every key fact from Version A and B. You're ready for the test!</p>
+        <button class="btn" onclick="location.reload()">Restart Revision</button>
     </div>
 </div>
 
 <script>
     let currentStep = 1;
-    const totalSteps = 5;
+    const totalSteps = 20;
 
     function updateProgress() {
-        const percent = (currentStep / totalSteps) * 100;
-        document.getElementById('progress-fill').style.width = percent + '%';
+        document.getElementById('progress-fill').style.width = ((currentStep-1) / totalSteps * 100) + '%';
     }
 
     function checkMC(btn, isCorrect, sectionId) {
         const feedback = document.querySelector(`#${sectionId} .feedback`);
         if (isCorrect) {
             btn.classList.add('correct');
-            feedback.innerText = "Correct! Well done.";
+            feedback.innerText = "Correct!";
             feedback.style.color = "var(--correct)";
-            setTimeout(() => nextSection(sectionId), 1200);
+            setTimeout(() => nextSection(sectionId), 1000);
         } else {
             btn.classList.add('wrong');
-            feedback.innerText = "Not quite. Try another option.";
+            feedback.innerText = "Try again!";
             feedback.style.color = "var(--primary)";
             setTimeout(() => btn.classList.remove('wrong'), 1000);
         }
@@ -154,35 +262,30 @@
         ev.target.appendChild(document.getElementById(data));
     }
 
-    function checkDrag(sectionId) {
-        const dropZone = document.getElementById('drop-zone');
-        const items = dropZone.querySelectorAll('.draggable');
+    function checkDrag(sectionId, zoneId) {
+        const items = document.getElementById(zoneId).querySelectorAll('.draggable');
         const feedback = document.querySelector(`#${sectionId} .feedback`);
         let order = "";
         items.forEach(item => order += item.getAttribute('data-order'));
-
         if (order === "1234") {
-            feedback.innerText = "Excellent! The PEEL structure is correct.";
+            feedback.innerText = "Perfect Sequence!";
             feedback.style.color = "var(--correct)";
-            setTimeout(() => nextSection(sectionId), 1500);
+            setTimeout(() => nextSection(sectionId), 1000);
         } else {
-            feedback.innerText = "Incorrect order. Remember: Point, Evidence, Explanation, Link.";
+            feedback.innerText = "Check the order (Point, Evidence, Explanation, Link).";
             feedback.style.color = "var(--primary)";
         }
     }
 
-    function checkScaffold(sectionId) {
-        const s1 = document.getElementById('s1').value;
-        const s2 = document.getElementById('s2').value;
-        const s3 = document.getElementById('s3').value;
+    function checkScaffold(sectionId, ids) {
         const feedback = document.querySelector(`#${sectionId} .feedback`);
-
-        if (s1 === "correct" && s2 === "correct" && s3 === "correct") {
-            feedback.innerText = "Correct! You've mastered the symbols.";
+        const allCorrect = ids.every(id => document.getElementById(id).value === 'c');
+        if (allCorrect) {
+            feedback.innerText = "Correct Analysis!";
             feedback.style.color = "var(--correct)";
-            setTimeout(() => nextSection(sectionId), 1500);
+            setTimeout(() => nextSection(sectionId), 1000);
         } else {
-            feedback.innerText = "Check your selections again.";
+            feedback.innerText = "Some answers are incorrect.";
             feedback.style.color = "var(--primary)";
         }
     }
