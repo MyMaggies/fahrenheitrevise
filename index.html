@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit 451: Part 1 Revision Portal</title>
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #457b9d;
+            --bg: #f1faee;
+            --text: #1d3557;
+            --correct: #2a9d8f;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: var(--primary); text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .btn { background: var(--secondary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        .btn:hover { background: var(--text); }
+        
+        .option-btn { display: block; width: 100%; text-align: left; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; background: #fff; cursor: pointer; transition: 0.3s; }
+        .option-btn.correct { background-color: var(--correct) !important; color: white; }
+        .option-btn.wrong { background-color: var(--primary) !important; color: white; }
+
+        .drag-container { border: 2px dashed var(--secondary); padding: 10px; min-height: 50px; margin: 10px 0; border-radius: 8px; }
+        .draggable { background: var(--secondary); color: white; padding: 10px; margin: 5px; border-radius: 4px; cursor: move; }
+        
+        .feedback { font-weight: bold; margin-top: 10px; min-height: 24px; }
+        .scaffold-select { padding: 5px; border-radius: 4px; border: 1px solid var(--secondary); font-weight: bold; }
+        
+        #progress-bar { width: 100%; background: #eee; height: 10px; border-radius: 5px; margin-bottom: 20px; }
+        #progress-fill { width: 0%; background: var(--correct); height: 100%; border-radius: 5px; transition: 0.5s; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Fahrenheit 451 Revision</h1>
+    <div id="progress-bar"><div id="progress-fill"></div></div>
+
+    <div class="section active" id="q1">
+        <h3>1. What is the significance of the title Fahrenheit 451? [cite: 8]</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q1')">It is the maximum temperature of most ovens. [cite: 9]</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q1')">It is the temperature at which iron melts. [cite: 10]</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q1')">It is the temperature at which paper ignites and burns. [cite: 11]</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q2">
+        <h3>2. True or False: Montag believes the Mechanical Hound was programmed to act against him. [cite: 22, 112]</h3>
+        <button class="option-btn" onclick="checkMC(this, true, 'q2')">True [cite: 18, 108]</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q2')">False</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q3">
+        <h3>3. Which professional symbols does Guy Montag wear? [cite: 28, 118]</h3>
+        <button class="option-btn" onclick="checkMC(this, false, 'q3')">Salamander and Snake [cite: 29, 119]</button>
+        <button class="option-btn" onclick="checkMC(this, true, 'q3')">Salamander and Phoenix [cite: 31, 121]</button>
+        <button class="option-btn" onclick="checkMC(this, false, 'q3')">Hound and Snake [cite: 32, 122]</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q4">
+        <h3>4. Sequence the PEEL Paragraph: Montag's Reaction to Clarisse [cite: 83, 84]</h3>
+        <p>Drag the sentences into the correct order: Point, Evidence, Explanation, Link. [cite: 83]</p>
+        <div id="drag-zone" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="drag1" class="draggable" draggable="true" ondragstart="drag(event)" data-order="3"><b>Explanation:</b> This is the first time Montag is forced to reflect on his own emotions and life satisfaction. [cite: 84]</div>
+            <div id="drag2" class="draggable" draggable="true" ondragstart="drag(event)" data-order="1"><b>Point:</b> Montag is deeply unsettled by Clarisse’s question, “Are you happy?” [cite: 84]</div>
+            <div id="drag3" class="draggable" draggable="true" ondragstart="drag(event)" data-order="4"><b>Link:</b> This moment marks the beginning of Montag’s internal transformation. [cite: 86]</div>
+            <div id="drag4" class="draggable" draggable="true" ondragstart="drag(event)" data-order="2"><b>Evidence:</b> After she asks, Montag is left confused and repeating the question to himself. [cite: 84]</div>
+        </div>
+        <div id="drop-zone" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <button class="btn" onclick="checkDrag('q4')">Check Order</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="q5">
+        <h3>5. Analysis Scaffold: Symbols and Society [cite: 149]</h3>
+        <p>Complete the analysis of the Part 1 title: [cite: 149]</p>
+        <div>
+            The title "The Hearth and the Salamander" represents two sides of Montag's life. 
+            The hearth is a symbol of 
+            <select class="scaffold-select" id="s1">
+                <option value="wrong">destruction</option>
+                <option value="correct">the home [cite: 151]</option>
+            </select>, 
+            while the salamander is an official symbol of the 
+            <select class="scaffold-select" id="s2">
+                <option value="wrong">government</option>
+                <option value="correct">firemen [cite: 151]</option>
+            </select>. 
+            In this world, most families like Mildred's are isolated, but Clarisse's family is unusual because they value 
+            <select class="scaffold-select" id="s3">
+                <option value="correct">meaningful conversation [cite: 67]</option>
+                <option value="wrong">interactive television [cite: 68]</option>
+            </select>.
+        </div>
+        <button class="btn" onclick="checkScaffold('q5')">Submit Answer</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section" id="finish">
+        <h3>Quiz Complete!</h3>
+        <p>You have mastered the core concepts of Fahrenheit 451: Part 1. [cite: 4, 94]</p>
+        <button class="btn" onclick="location.reload()">Restart Revision</button>
+    </div>
+</div>
+
+<script>
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    function updateProgress() {
+        const percent = (currentStep / totalSteps) * 100;
+        document.getElementById('progress-fill').style.width = percent + '%';
+    }
+
+    function checkMC(btn, isCorrect, sectionId) {
+        const feedback = document.querySelector(`#${sectionId} .feedback`);
+        if (isCorrect) {
+            btn.classList.add('correct');
+            feedback.innerText = "Correct! [cite: 11, 108, 121]";
+            feedback.style.color = "var(--correct)";
+            setTimeout(() => nextSection(sectionId), 1000);
+        } else {
+            btn.classList.add('wrong');
+            feedback.innerText = "Try again. Review Part 1! [cite: 4]";
+            feedback.style.color = "var(--primary)";
+            setTimeout(() => btn.classList.remove('wrong'), 1000);
+        }
+    }
+
+    function allowDrop(ev) { ev.preventDefault(); }
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+    function checkDrag(sectionId) {
+        const dropZone = document.getElementById('drop-zone');
+        const items = dropZone.querySelectorAll('.draggable');
+        const feedback = document.querySelector(`#${sectionId} .feedback`);
+        
+        let order = "";
+        items.forEach(item => order += item.getAttribute('data-order'));
+
+        if (order === "1234") {
+            feedback.innerText = "Perfect PEEL structure! [cite: 83]";
+            feedback.style.color = "var(--correct)";
+            setTimeout(() => nextSection(sectionId), 1000);
+        } else {
+            feedback.innerText = "Incorrect order. Remember: Point -> Evidence -> Explanation -> Link. [cite: 83]";
+            feedback.style.color = "var(--primary)";
+        }
+    }
+
+    function checkScaffold(sectionId) {
+        const s1 = document.getElementById('s1').value;
+        const s2 = document.getElementById('s2').value;
+        const s3 = document.getElementById('s3').value;
+        const feedback = document.querySelector(`#${sectionId} .feedback`);
+
+        if (s1 === "correct" && s2 === "correct" && s3 === "correct") {
+            feedback.innerText = "Excellent analysis! [cite: 67, 151]";
+            feedback.style.color = "var(--correct)";
+            setTimeout(() => nextSection(sectionId), 1000);
+        } else {
+            feedback.innerText = "Some parts are incorrect. Check the symbols again! [cite: 149]";
+            feedback.style.color = "var(--primary)";
+        }
+    }
+
+    function nextSection(currentId) {
+        document.getElementById(currentId).classList.remove('active');
+        currentStep++;
+        updateProgress();
+        const nextId = currentStep > totalSteps ? 'finish' : 'q' + currentStep;
+        document.getElementById(nextId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
